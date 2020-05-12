@@ -99,5 +99,9 @@ radiancegooplay@tmw023:~$ sudo apt-get install mosquitto
 
 ```
 
+查看系统的日志
+
+journalctl -u chirpstack-gateway-bridge -f -n 50
+
 
 
