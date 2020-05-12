@@ -103,5 +103,25 @@ radiancegooplay@tmw023:~$ sudo apt-get install mosquitto
 
 journalctl -u chirpstack-gateway-bridge -f -n 50
 
+我又碰到了以下的错误
 
+```
+xxxxgooplay@xxx:~$ sudo systemctl status chirpstack-gateway-bridge
+● chirpstack-gateway-bridge.service - ChirpStack Gateway Bridge
+   Loaded: loaded (/lib/systemd/system/chirpstack-gateway-bridge.service; enabled; vendor preset: enabled)
+   Active: failed (Result: exit-code) since Tue 2020-05-12 06:26:28 UTC; 8s ago
+     Docs: https://www.chirpstack.io/
+  Process: 1934 ExecStart=/usr/bin/chirpstack-gateway-bridge (code=exited, status=1/FAILURE)
+ Main PID: 1934 (code=exited, status=1/FAILURE)
+May 12 06:26:27 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Main process exited, code=exited, status=1/FAILURE
+May 12 06:26:27 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Unit entered failed state.
+May 12 06:26:27 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Failed with result 'exit-code'.
+May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Service hold-off time over, scheduling restart.
+May 12 06:26:28 tmw023 systemd[1]: Stopped ChirpStack Gateway Bridge.
+May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Start request repeated too quickly.
+May 12 06:26:28 tmw023 systemd[1]: Failed to start ChirpStack Gateway Bridge.
+May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Unit entered failed state.
+May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Failed with result 'exit-code'.
+
+```
 
