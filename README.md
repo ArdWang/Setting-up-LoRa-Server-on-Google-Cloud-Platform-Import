@@ -62,6 +62,29 @@ go: downloading github.com/hashicorp/golang-lru v0.5.0
 
 Ubuntu Linux系统使用命令操作的时候,当命令执行的时候,如果我们想退出当前的执行,可以使用快捷键: Ctrl + c 即可退出当前命令行
 
+
+
+安装网关桥的时候 一定要提前安装 
+
+ChirpStack Gateway Bridge利用MQTT来发布事件和接收命令。Mosquitto是流行的开源MQTT代理，但是任何实现MQTT 3.1.1的MQTT代理都可以使用。如果您安装Mosquitto，请确保您安装了最新版本
+
+sudo apt-get install mosquitto
+
+然后执行安装
+
+安装需要 sudo apt-get install lora-gateway-bridge  //这个最后会变为 chirpstack-gateway-bridge
+
 配置 lora-gateway-bridge.toml
 安装需要 sudo apt-get install lora-gateway-bridge
+
+配置好之后运行 
+
+测试成功的话
+
+sudo chirpstack-gateway-bridge
+
+执行
+
+sudo systemctl [start|stop|restart|status] chirpstack-gateway-bridge
+
 
