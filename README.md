@@ -62,3 +62,6 @@ go: downloading github.com/hashicorp/golang-lru v0.5.0
 
 Ubuntu Linux系统使用命令操作的时候,当命令执行的时候,如果我们想退出当前的执行,可以使用快捷键: Ctrl + c 即可退出当前命令行
 
+配置 lora-gateway-bridge.toml
+安装需要 sudo apt-get install lora-gateway-bridge
+
