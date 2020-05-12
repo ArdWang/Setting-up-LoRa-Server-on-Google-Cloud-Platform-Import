@@ -88,3 +88,16 @@ sudo chirpstack-gateway-bridge
 sudo systemctl [start|stop|restart|status] chirpstack-gateway-bridge
 
 
+如果没有导入就报以下的错误
+```
+xx@xxx:~$ sudo chirpstack-gateway-bridge
+INFO[0000] starting ChirpStack Gateway Bridge            docs="https://www.chirpstack.io/gateway-bridge/" version=3.8.0
+INFO[0000] backend/semtechudp: starting gateway udp listener  addr="0.0.0.0:1700"
+FATA[0000] setup integration error: setup mqtt integration error: integration/mqtt: new GCP Cloud IoT Core authentication error: parse jwt key-file error: asn1: structure error: length too large 
+radiancegooplay@tmw023:~$ sudo vim private-key.pem
+radiancegooplay@tmw023:~$ sudo apt-get install mosquitto
+
+```
+
+
+
