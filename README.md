@@ -4,6 +4,7 @@ This is in Setting up LoRa Server on Google Cloud Platform
 First
 
 Look at : https://cloud.google.com/community/tutorials/setting-up-loraserver
+or https://www.chirpstack.io/
 
 配置过程中一定不能把 项目id填错 填错将会出现以下bug
 
