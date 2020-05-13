@@ -14,10 +14,11 @@ or https://www.chirpstack.io/
 1. 创建 谷歌 vm 这个看文档
 
 2. 生成密钥 
+```
+   openssl genpkey -algorithm RSA -out rsa_private.pem -pkeyopt rsa_keygen_bits:2048
 
-openssl genpkey -algorithm RSA -out rsa_private.pem -pkeyopt rsa_keygen_bits:2048
-
-openssl rsa -in rsa_private.pem -pubout -out rsa_public.pem
+   openssl rsa -in rsa_private.pem -pubout -out rsa_public.pem
+```
 
 3. 上传密钥文件 其中把 rsa_private.pem 文件上传到 谷歌 vm中 并查询一下文件所在的路径 find / -name rsa_private.pem 我的是这个路径 /home/radiancegooplay/rsa_private.pem
 
