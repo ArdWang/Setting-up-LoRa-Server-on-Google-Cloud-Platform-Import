@@ -259,6 +259,29 @@ mqtt: connected to mqtt broker"
 
 2. 创建数据库 按照文档的说明去创建就行
 
+启用trgm和hstore扩展
+在PostgreSQL实例的“ 概述”选项卡中，单击“ 使用Cloud Shell连接”，然后gcloud sql connect ...在控制台中显示命令 时，按Enter。它将提示您输入postgres用户密码（您在创建PostgreSQL实例时配置的密码）。
+
+然后执行以下SQL命令：
+
+```
+-- change to the ChirpStack Application Server database
+\c chirpstack_as
+
+-- enable the pg_trgm extension
+-- (this is needed to facilitate the search feature)
+create extension pg_trgm;
+
+-- enable the hstore extension
+-- (this is needed for storing additional k/v meta-data)
+create extension hstore;
+
+-- exit psql
+\q
+您可以关闭Cloud Shell。
+```
+
+
 3. 安装ChirpStack网络服务器 sudo apt install chirpstack-network-server
 
 4. 配置chirpstack-network-server.toml文件 sudo vim /etc/chirpstack-network-server/chirpstack-network-server.toml 修改完成后记得:wq保存 
