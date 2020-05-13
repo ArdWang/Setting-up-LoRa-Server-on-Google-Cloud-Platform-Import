@@ -124,4 +124,52 @@ May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Unit enter
 May 12 06:26:28 tmw023 systemd[1]: chirpstack-gateway-bridge.service: Failed with result 'exit-code'.
 
 ```
+或者
+```
+FATA[0000] setup integration error: setup mqtt integration error: integration/mqtt: new GCP Cloud IoT Core authentication error: parse jwt key-file error: asn1: structure error: tags don’t match (16 vs {class:0 tag:21 length:5 isCompound:false}) {optional:false explicit:false application:false private:false defaultValue: tag: stringType:0 timeType:0 set:false omitEmpty:false} pkcs8 @2
+
+```
+
+#### 关键的处理办法
+
+当出现上面这些错误的时候 第一个想到的是4096的太长了 需要更换成谷歌官方的2048 我还在 
+
+文档中看到这段话
+
+从社区提交的Google Cloud社区教程不代表Google Cloud产品的官方文档。
+
+所以我更换了 这种形式的
+
+You can generate a 2048-bit RSA key pair with the following commands:
+
+生成私钥
+
+openssl genpkey -algorithm RSA -out rsa_private.pem -pkeyopt rsa_keygen_bits:2048 
+
+生成公钥
+
+openssl rsa -in rsa_private.pem -pubout -out rsa_public.pem
+
+果然困惑我二天的问题解决了
+
+期间我咨询过
+https://forum.chirpstack.io/top/monthly 开发人员 他们也没有给我找到合适的解决办法 不过我敢肯定这种问题没有引起他们的注意
+
+#### Tips
+
+试运行
+
+sudo chirpstack-gateway-bridge
+
+查找文件所在的路径
+
+find / -name "filename"
+
+修改文件权限
+
+chmod a+rw private-key.pem
+
+
+
+
 
