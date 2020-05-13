@@ -134,6 +134,11 @@ FATA[0000] setup integration error: setup mqtt integration error: integration/mq
 
 当出现上面这些错误的时候 第一个想到的是4096的太长了 需要更换成谷歌官方的2048 我还在 
 
+有关创建密钥对 请看谷歌文档的介绍
+
+https://cloud.google.com/iot/docs/how-tos/credentials/keys
+
+
 文档中看到这段话
 
 从社区提交的Google Cloud社区教程不代表Google Cloud产品的官方文档。
