@@ -4,7 +4,7 @@ This is in Setting up LoRa Server on Google Cloud Platform
 First
 
 Look at : https://cloud.google.com/community/tutorials/setting-up-loraserver
-or https://www.chirpstack.io/
+or https://www.chirpstack.io/project/guides/google-cloud-platform/
 
 
 #### 我的安装步骤
